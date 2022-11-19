@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+</head>
+<body>
+  <h1>Post목록</h1>
+  {% for p in posts %}
+    <hr/>
+    <h3><a href="{{ p.get_absolute_url }}">{{ p }}</a></h3>
+    <p>{{ p.content }}</p>
+    <strong>{{ p.dt_create }}</strong>
+  {% endfor %}
+</body>
+</html>
