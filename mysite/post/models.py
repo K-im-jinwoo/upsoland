@@ -11,5 +11,5 @@ class Post(models.Model):
     return self.title
 
   def get_absolute_url(self):
-      return f'/post/{self.pk}/'
+    return f'/post/{self.pk}/'
   

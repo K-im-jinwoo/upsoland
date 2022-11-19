@@ -1,12 +1,39 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Upsoland</title>
+  <title>upsoland</title>
+  <link rel="stylesheet" href="{% static 'upsoland/css/style.css' %}">
 </head>
+
 <body>
-  <h1>안녕하세요 업소랜드입니다.</h1>
+  <div id="wrap">
+    <header id="header">
+      <h1>upsoland</h1>
+      <nav>
+        <a href="/about_me/">회사소개</a>
+        <a href="/post/">A/S</a>
+      </nav>
+    </header>
+    <article id="article"></article>
+    <section id="section">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </section>
+    <footer id="footer"></footer>
+  </div>
 </body>
+
 </html>

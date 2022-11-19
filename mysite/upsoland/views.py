@@ -6,3 +6,9 @@ def index(request):
         request,
         'upsoland/index.html',
     )
+
+def about_me(request):
+    return render(
+        request, 
+        'upsoland/about_me.html',
+    )
