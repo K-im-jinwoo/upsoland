@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Post
 
 # Create your views here.
@@ -11,13 +11,6 @@ class PostList(ListView):
 
 # post detail page
 # pk를 매개변수로 받아온다.
-def post_detail(request, pk):
-  post = Post.objects.get(pk=pk)
-  
-  return render(
-    request,
-    'post/post_detail.html',
-    {
-      'post': post,
-    }
-  )
+class PostDetail(DetailView):
+  model = Post
+  template_name = 'post/post_detail.html'
