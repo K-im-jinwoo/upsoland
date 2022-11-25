@@ -1,18 +1,13 @@
 from django.shortcuts import render
+from django.views.generic import ListView
 from .models import Post
 
 # Create your views here.
 # post list 페이지
-def post_list(request):
-  posts = Post.objects.all().order_by('-pk')
-
-  return render(
-        request,
-        'post/post_list.html',
-        {
-          'posts': posts,
-        }
-    )
+class PostList(ListView):
+  model = Post
+  template_name = 'post/post_list.html'
+  ordering = '-pk'
 
 # post detail page
 # pk를 매개변수로 받아온다.
