@@ -1,27 +1,24 @@
-<!DOCTYPE html>
+{% extends 'post/base.html' %}
+
 {% load static %}
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ post.title }}</title>
-  <link rel="stylesheet" href="{% static 'post/bootstrap/bootstrap.min.css' %}" media="screen">
-</head>
-
-<body>
-  <nav>
-    <a href="/post/">AS</a>
-  </nav>
-  <h1>{{ post.title }}</h1>
-  {% if post.head_image %}
-  <img src="{{ post.head_image.url }}" class="content_img" alt="{{ post }} head image">
-  {% else %}
-  <img src="https://picsum.photos/seed/{{ post.id }}/180/140" alt="random img">
-  {% endif %}
-  <p>{{ post.content }}</p>
-  <strong>{{ post.dt_create }}</strong>
-</body>
-
-</html>
+{% block as_list %}
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1>{{post.title }}</h1>
+    </div>
+    {% if post.head_image %}
+    <img src="{{ post.head_image.url }}" class="content_img" alt="{{ post }} head image">
+    {% else %}
+    <img src="https://picsum.photos/seed/{{ post.id }}/180/140" alt="random img">
+    {% endif %}
+    <div class="col-12">
+      <p>{{ post.content }}</p>
+    </div>
+    <div class="col-12">
+      <strong>{{ post.dt_create }}</strong>
+    </div>
+  </div>
+</div>
+{% endblock %}
