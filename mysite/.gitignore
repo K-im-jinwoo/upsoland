@@ -191,6 +191,7 @@ cython_debug/
 # Django stuff:
 db.sqlite3
 migrations/
+_media/
 
 # Flask stuff:
 
