@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,13 +9,19 @@
   <title>{{ post.title }}</title>
   <link rel="stylesheet" href="{% static 'post/bootstrap/bootstrap.min.css' %}" media="screen">
 </head>
+
 <body>
   <nav>
     <a href="/post/">AS</a>
   </nav>
   <h1>{{ post.title }}</h1>
-  <img src="{{ post.head_image.url }}">
+  {% if post.head_image %}
+  <img src="{{ post.head_image.url }}" class="content_img" alt="{{ post }} head image">
+  {% else %}
+  <img src="https://picsum.photos/seed/{{ post.id }}/180/140" alt="random img">
+  {% endif %}
   <p>{{ post.content }}</p>
   <strong>{{ post.dt_create }}</strong>
 </body>
+
 </html>

@@ -1,21 +1,85 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Post</title>
   <link rel="stylesheet" href="{% static 'post/bootstrap/bootstrap.min.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'post/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'post/css/reset.css' %}">
 </head>
+
 <body>
-  <h1>Post목록</h1>
-  {% for p in post_list %}
-  <hr/>
-    <img src="{{ p.head_image.url }}">
-    <h3><a href="{{ p.get_absolute_url }}">{{ p }}</a></h3>
-    <p>{{ p.content }}</p>
-    <strong>{{ p.dt_create }}</strong>
-  {% endfor %}
+  <!-- header -->
+  <header id="header">
+    <nav id="menu">
+      <h1 class="ir_su">메뉴</h1>
+      <div class="container">
+        <div class="row">
+          <div class="col-1">
+            <a href="#">
+              <img src="#" alt="Logo">
+            </a>
+          </div>
+          <div class="col-1">
+            <a href="#">
+              회사소개
+            </a>
+          </div>
+          <div class="col-1">
+            <a href="#">
+              설치사례
+            </a>
+          </div>
+          <div class="col-1">
+            <a href="#">
+              수리사례
+            </a>
+          </div>
+          <div class="col-1">
+            <a href="#">
+              상담하기
+            </a>
+          </div>
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+          <div class="col-1"></div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- as list -->
+  <section id="section">
+    <div class="content">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Post목록</h1>
+            <hr />
+          </div>
+          {% for p in post_list %}
+          <div class="col-3">
+            {% if p.head_image %}
+              <img src="{{ p.head_image.url }}" class="content_img" alt="{{ p }} head image">
+              {% else %}
+              <img src="https://picsum.photos/seed/{{ p.id }}/180/140" alt="random img">
+            {% endif %}
+            <h3 class="content_tit"><a href="{{ p.get_absolute_url }}">{{ p }}</a></h3>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
+
 </html>
