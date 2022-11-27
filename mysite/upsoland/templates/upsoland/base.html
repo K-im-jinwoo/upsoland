@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Post</title>
+  <link rel="stylesheet" href="{% static 'upsoland/bootstrap/bootstrap.min.css' %}" media="screen">
+  <link rel="stylesheet" href="{% static 'upsoland/css/reset.css' %}">
+  {% block link %}
+  {% endblock %}
+</head>
+
+<body>
+  {% include 'upsoland/navbar.html' %}
+
+  {% block content %}
+  {% endblock %}
+
+  {% include 'upsoland/footer.html' %}
+
+</body>
+
+</html>

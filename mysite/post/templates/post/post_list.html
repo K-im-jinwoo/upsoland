@@ -1,10 +1,12 @@
-{% extends 'post/base.html' %}
-
-
+{% extends 'upsoland/base.html' %}
+{% load static %}
+{% block link %}
+  <link rel="stylesheet" href="{% static 'post/css/style.css' %}">
+{% endblock %}
 
 
   <!-- as list -->
-  {% block as_list %}
+  {% block content %}
   <section id="section">
     <div class="content">
       <div class="container">

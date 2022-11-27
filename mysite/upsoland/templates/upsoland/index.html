@@ -1,39 +1,56 @@
-<!DOCTYPE html>
+{% extends 'upsoland/base.html' %}
 {% load static %}
-<html lang="ko">
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>upsoland</title>
-  <link rel="stylesheet" href="{% static 'upsoland/css/style.css' %}">
-</head>
+{% block link %}
+<link rel="stylesheet" href="{% static 'upsoland/css/style.css' %}">
+{% endblock %}
 
-<body>
-  <div id="wrap">
-    <header id="header">
-      <h1>upsoland</h1>
-      <nav>
-        <a href="/about_me/">회사소개</a>
-        <a href="/post/">A/S</a>
-      </nav>
-    </header>
-    <article id="article"></article>
-    <section id="section">
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-      <div></div>
-    </section>
-    <footer id="footer"></footer>
+{% block content %}
+<aside>
+  <h1 class="ir_su">제품 목록</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="냉장고">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="냉동고">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="냉동/냉장">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="쇼케이스">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="제빙기">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="테이블냉장/냉동">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="식기세척기">
+        </a>
+      </div>
+      <div class="col-3">
+        <a href="#">
+          <img src="#" alt="비어/백바">
+        </a>
+      </div>
+    </div>
   </div>
-</body>
-
-</html>
+</aside>
+{% endblock %}
