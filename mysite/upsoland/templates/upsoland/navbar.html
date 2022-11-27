@@ -1,3 +1,9 @@
+{% load static %}
+
+{% block link %}
+<link rel="stylesheet" href="{% static 'upsoland/css/navbar.css' %}">
+{% endblock %}
+
 <!-- header -->
 <header id="header">
   <nav id="menu">
@@ -6,7 +12,7 @@
       <div class="row">
         <div class="col-1">
           <a href="#">
-            <img src="#" alt="Logo">
+            <img src="{% static 'upsoland/images/main.png' %}" alt="Logo" class="logo_img">
           </a>
         </div>
         <div class="col-1">

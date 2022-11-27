@@ -6,6 +6,18 @@
 {% endblock %}
 
 {% block content %}
+
+<section>
+  <h1 class="ir_su">메인 이미지</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <img src="{% static 'upsoland/images/no.jpg' %}" alt="대문 이미지" class="main_img">
+      </div>
+    </div>
+  </div>
+</section>
+
 <aside>
   <h1 class="ir_su">제품 목록</h1>
   <div class="container">
@@ -53,4 +65,34 @@
     </div>
   </div>
 </aside>
+
+<section>
+  <div class="container">
+    <div class="row">
+      <!-- 예약 현황 -->
+      <div class="col-6">
+        <h2>예약 현황</h2>
+        <ul>
+          <li>상담완료</li>
+          <li>상담완료</li>
+          <li>상담완료</li>
+        </ul>
+      </div>
+      <!-- 상담 문의 -->
+      <div class="col-6">
+        <h2>
+          실시간 상담 문의
+        </h2>
+        <form action="#" method="POST">
+          <label for="day">희망일</label>
+          <input type="datetime" id="day" name="day"> <br/>
+          <label for="name">고객명</label>
+          <input type="text" id="name" name="name"> <br />
+          <label for="phone">휴대폰</label>
+          <input type="tel" id="phone" name="phone">
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
 {% endblock %}
