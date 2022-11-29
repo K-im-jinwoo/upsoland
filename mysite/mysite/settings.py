@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'upsoland',
     'post',
+    'counsel',
 ]
 
 MIDDLEWARE = [
